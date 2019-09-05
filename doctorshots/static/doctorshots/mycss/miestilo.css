@@ -1,0 +1,42 @@
+/* Styles para el navbar*/
+
+.header {
+    background: url('../img/header.jpg') no-repeat center;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.header .navbar {
+    background-color: #000000bf !important;
+}
+
+.header .navbar ul .nav-link:hover {
+    background-color: #9910CB;
+    border-radius: 10px;
+}
+
+
+/* Login */
+
+.body-login {
+    background-image: url('../img/oWlyMvz.gif')
+}
+
+.header-login {
+    background-size: cover;
+}
+
+.header-login .navbar {
+    background-color: #000000bf !important;
+}
+
+.header-login .navbar ul .nav-link:hover {
+    background-color: #9910CB;
+    border-radius: 10px;
+}
+
+.mt-4,
+.my-4 {
+    margin-top: 1.5rem!important;
+    padding-top: 91px;
+}

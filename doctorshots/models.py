@@ -7,7 +7,8 @@ class Usuarios(models.Model):
     contraseña = models.CharField(max_length=45)
     ROLES = (
         ('1', 'empleado'),
-        ('2', 'administrador')
+        ('2', 'administrador'),
+        ('3', 'usuario')
     )
     Rol = models.CharField(max_length=1, choices=ROLES, default='1')
     #métodos

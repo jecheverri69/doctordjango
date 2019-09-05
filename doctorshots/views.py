@@ -7,7 +7,7 @@ from doctorshots.models import Usuarios
 
 
 def index(request):
-    return render(request, 'doctorshots/login.html')
+    return render(request, 'doctorshots/index.html')
 
 def login(request):
     try:
@@ -18,7 +18,16 @@ def login(request):
        
         #en caso afirmativo, creo la variable de sesión
         request.session['logueado'] = [q.cedula, q.usuario, q.contraseña, q.Rol]
-        return HttpResponse("logueado")
+        return render(request,'doctorshots/index.html')
     except Exception as e:
         return HttpResponse(e)
+
+def logout(request):
+    del request.session['logueado']
+    return render(request, 'doctorshots/index.html')
+
+
+def formularioLogin(request):
+    return render(request, 'doctorshots/login.html')
+        
         
