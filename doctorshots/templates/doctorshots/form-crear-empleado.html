@@ -1,0 +1,75 @@
+{% extends 'doctorshots/base.html' %} {% load staticfiles%} {% block titulo %} Formulario-Empleados {% endblock %} {% block body %}
+
+<body> {% endblock %} {% block header %}
+    <header> {% endblock %} {% block contenedor %}
+        <div class="d-flex margin-top-my mt-4">
+            <div class="card col-sm-6-my ">
+                <div class="card-body ">
+                    <form action="{% url 'doctorshots:guardarempleado' %}" method="POST">
+                        {% csrf_token %}
+
+                        <div class="form-group">
+                            <label class="font-drop upper font-color-drop-little ">Cedula</label>
+                            <input type="text" name="cedula" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-drop upper font-color-drop-little">Nombres</label>
+                            <input type="text" name="usuario" class="form-control">
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <label class="font-drop upper font-color-drop-little">Contraseña</label>
+                            <input type="text" name="clave" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="font-drop upper font-color-drop-little">Rol</label><br>
+                            <select name="Rol" class="browser-default custom-select">
+                                <option selected>Elige</option>
+                                <option class="font-drop upper font-color-drop-little" value="2">Administrador</option>
+                                <option class="font-drop upper font-color-drop-little" value="1">Empleado</option>
+                            </select>
+                        </div>
+
+                        <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-sm-7 mt-4">
+                <table class="table text-hover">
+                    <thead>
+                        <tr>
+                            <th class="font-drop upper font-color-drop">Cedula</th>
+                            <th class="font-drop upper font-color-drop">Usuario</th>
+                            <th class="font-drop upper font-color-drop">Rol</th>
+                            <th class="font-drop upper font-color-drop">Acciones</th>
+
+                        </tr>
+                    </thead>
+                    {% for empleado in datos %}
+                    <tr>
+                        <td class="font-Neon">{{empleado.cedula}} </td>
+                        <td class="font-pacman">{{empleado.usuario}}</td>
+                        {%if empleado.Rol == '2' %}
+                        <td><img src=" {% static 'doctorshots/img/administrador.png' %}"></td>
+                        {% elif empleado.Rol == '1' %}
+                        <td><img src="{% static 'doctorshots/img/empleado.png' %}"> </td>
+                        {% endif %}
+                        <td>
+                            <a class="btn btn-warning font-drop" href="">Editar</a>
+                            <a class="btn btn-danger font-drop" href="">Delete</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+
+
+            {% endblock %}

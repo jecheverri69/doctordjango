@@ -11,13 +11,13 @@ def index(request):
 
 def login(request):
     try:
-        user = request.POST['txtuser']
-        passw = request.POST['txtpass']
+        user = request.POST['usuario']
+        passw = request.POST['clave']
         #verificar si hay un registro con ese usuario y clave
-        q = Usuarios.objects.get(usuario = user, contraseña = passw)
+        q = Usuarios.objects.get(usuario = user, clave = passw)
        
         #en caso afirmativo, creo la variable de sesión
-        request.session['logueado'] = [q.cedula, q.usuario, q.contraseña, q.Rol]
+        request.session['logueado'] = [q.cedula, q.usuario, q.clave, q.Rol]
         return render(request,'doctorshots/index.html')
     except Exception as e:
         return HttpResponse(e)
@@ -29,5 +29,26 @@ def logout(request):
 
 def formularioLogin(request):
     return render(request, 'doctorshots/login.html')
+
+def formularioEmpleado(request):
+    q= Usuarios.objects.all()
+    contexto = {'datos': q}
+    return render(request,'doctorshots/form-crear-empleado.html',contexto)
+
+def guardarEmpleado(request):
+    try:
+        empleado = Usuarios(
+            cedula = request.POST['cedula'],
+            usuario = request.POST['usuario'],
+            clave = request.POST['clave'],
+            Rol = request.POST['Rol']
+        )
+        empleado.save()
         
+        q = Usuarios.objects.all()
+        contexto = {'datos': q}
         
+        return HttpResponseRedirect(reverse('doctorshots:formempleado',args=()))
+    except Exception as e:
+        return HttpResponse('Error entro aca')
+    

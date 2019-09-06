@@ -8,4 +8,7 @@ urlpatterns = [
     path('formlogin/', views.formularioLogin, name='formlogin'),
     path('login/', views.login, name='login'),
     path('logout',views.logout, name='logout'),
+    path('formempleado', views.formularioEmpleado, name='formempleado'),
+    path('guardarempleado', views.guardarEmpleado, name="guardarempleado")    
+    
 ]
