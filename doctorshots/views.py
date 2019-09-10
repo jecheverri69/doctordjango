@@ -52,11 +52,11 @@ def guardarEmpleado(request):
         return HttpResponse('Error entro aca')
 
 
-def eliminarEmpleado(request,cedula):
+def eliminarEmpleado(request,id):
     try:
-        q = Usuarios.objects.get(cedula = cedula)
+        q = Usuarios.objects.get(pk=id)
         print(q)
-        q = delete()
+        q.delete()
         return HttpResponseRedirect(reverse('doctorshots:formempleado', args=()))
     except Exception as e:
         return HttpResponse(e)

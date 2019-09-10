@@ -62,8 +62,8 @@
                         <td><img src="{% static 'doctorshots/img/empleado.png' %}"> </td>
                         {% endif %}
                         <td>
-                            <a class="btn btn-warning font-drop" href=" {% url 'doctorshots:eliminarempleado' empleado.id %}">Editar</a>
-                            <a class="btn btn-danger font-drop" href="">Delete</a>
+                            <a class="btn btn-warning font-drop" href=" ">Editar</a>
+                            <a class="btn btn-danger font-drop" href="{% url 'doctorshots:eliminarempleado' empleado.id %}">Delete</a>
                         </td> 
                     </tr>
                     {% endfor %}
