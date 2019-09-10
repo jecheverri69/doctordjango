@@ -2,16 +2,19 @@ from django.db import models
 
 # Create your models here.
 class Usuarios(models.Model):
-    cedula = models.IntegerField(primary_key=True)
+    cedula = models.CharField(max_length=20, unique=True)
     usuario = models.CharField(max_length=45)
-    clave = models.CharField(max_length=45)
-    ROLES = (
-        ('1', 'empleado'),
-        ('2', 'administrador'),
-        ('3', 'usuario')
+    clave = models.CharField(max_length=50)
+    ROLES=(
+        ('1','empleado'),
+        ('2','administrador'),
+        ('3','usuario')
     )
-    Rol = models.CharField(max_length=1, choices=ROLES, default='1')
-    #métodos
+    Rol= models.CharField(max_length=1, choices=ROLES, default='1')
+    
+    #METODOS
     def __str__(self):
-        return self.usuario
-
+        return self.cedula
+        
+    
+    

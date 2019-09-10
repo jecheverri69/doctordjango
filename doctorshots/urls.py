@@ -9,6 +9,7 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout',views.logout, name='logout'),
     path('formempleado', views.formularioEmpleado, name='formempleado'),
-    path('guardarempleado', views.guardarEmpleado, name="guardarempleado")    
+    path('guardarempleado', views.guardarEmpleado, name="guardarempleado"),
+    path('eliminarempleado/<int:id>/', views.eliminarEmpleado, name='eliminarempleado')
     
 ]

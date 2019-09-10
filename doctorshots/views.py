@@ -14,8 +14,7 @@ def login(request):
         user = request.POST['usuario']
         passw = request.POST['clave']
         #verificar si hay un registro con ese usuario y clave
-        q = Usuarios.objects.get(usuario = user, clave = passw)
-       
+        q = Usuarios.objects.get(usuario = user, clave = passw)       
         #en caso afirmativo, creo la variable de sesión
         request.session['logueado'] = [q.cedula, q.usuario, q.clave, q.Rol]
         return render(request,'doctorshots/index.html')
@@ -48,7 +47,16 @@ def guardarEmpleado(request):
         q = Usuarios.objects.all()
         contexto = {'datos': q}
         
-        return HttpResponseRedirect(reverse('doctorshots:formempleado',args=()))
+        return HttpResponseRedirect(reverse ('doctorshots:formempleado',args=()))
     except Exception as e:
         return HttpResponse('Error entro aca')
-    
+
+
+def eliminarEmpleado(request,cedula):
+    try:
+        q = Usuarios.objects.get(cedula = cedula)
+        print(q)
+        q = delete()
+        return HttpResponseRedirect(reverse('doctorshots:formempleado', args=()))
+    except Exception as e:
+        return HttpResponse(e)

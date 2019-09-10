@@ -19,7 +19,7 @@
 /* Login */
 
 .body-login {
-    background-image: url('../img/oWlyMvz.gif')
+    background-image: url('../img/oWlyMvz.gif');
 }
 
 .header-login {
@@ -38,5 +38,23 @@
 .mt-4,
 .my-4 {
     margin-top: 1.5rem!important;
-    padding-top: 91px;
+    padding-top: 60px;
+}
+
+div .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #00000082;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+
+.body-empleado {
+    background-image: url('../img/back.gif');
 }
