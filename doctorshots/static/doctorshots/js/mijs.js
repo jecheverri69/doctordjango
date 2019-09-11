@@ -16,5 +16,9 @@ function editarEmpleado(ruta) {
         }
     })
 
+    
+}
+function complementview(){
 
+    document.getElementsById("complement").setAttribute("style", "dislay:block")
 }

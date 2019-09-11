@@ -67,3 +67,7 @@ def editarEmpleado(request, id):
         return render(request,'doctorshots/form-editar-empleado.html',contexto)
     except Exception as e:
         return HttpResponse(e)
+
+
+def carta(request):
+    return render(request, 'doctorshots/carta.html')        

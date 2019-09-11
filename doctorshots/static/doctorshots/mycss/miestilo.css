@@ -1,9 +1,8 @@
 /* Styles para el navbar*/
 
 .header {
-    background: url('../img/header.jpg') no-repeat center;
     background-size: cover;
-    min-height: 100vh;
+    height: 400px;
 }
 
 .header .navbar {
