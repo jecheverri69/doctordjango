@@ -25,7 +25,6 @@ def logout(request):
     del request.session['logueado']
     return render(request, 'doctorshots/index.html')
 
-
 def formularioLogin(request):
     return render(request, 'doctorshots/login.html')
 
@@ -38,6 +37,7 @@ def guardarEmpleado(request):
     try:
         empleado = Usuarios(
             cedula = request.POST['cedula'],
+            nombres= request.POST['nombres'],
             usuario = request.POST['usuario'],
             clave = request.POST['clave'],
             Rol = request.POST['Rol']
@@ -51,12 +51,19 @@ def guardarEmpleado(request):
     except Exception as e:
         return HttpResponse('Error entro aca')
 
-
 def eliminarEmpleado(request,id):
     try:
         q = Usuarios.objects.get(pk=id)
         print(q)
         q.delete()
         return HttpResponseRedirect(reverse('doctorshots:formempleado', args=()))
+    except Exception as e:
+        return HttpResponse(e)
+    
+def editarEmpleado(request, id):
+    try:
+        q= Usuarios.objects.get(pk=id)
+        contexto = {'empleado':q}
+        return render(request,'doctorshots/form-editar-empleado.html',contexto)
     except Exception as e:
         return HttpResponse(e)

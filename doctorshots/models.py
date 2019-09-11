@@ -3,6 +3,7 @@ from django.db import models
 # Create your models here.
 class Usuarios(models.Model):
     cedula = models.CharField(max_length=20, unique=True)
+    nombres= models.CharField(max_length=50, default='')
     usuario = models.CharField(max_length=45)
     clave = models.CharField(max_length=50)
     ROLES=(

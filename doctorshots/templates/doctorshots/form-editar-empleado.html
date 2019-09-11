@@ -1,0 +1,33 @@
+<form action="" method="POST">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <input type="text" name="cedula" class="form-control" value="{{ empleado.cedula }}" readonly>
+    </div>
+
+      <div class="form-group">
+        <input type="text" name="usuario" class="form-control" value="{{ empleado.nombres }}" readonly>
+    </div>
+
+
+
+    <div class="form-group">
+        <input type="text" name="usuario" class="form-control" value="{{ empleado.usuario }}" >
+    </div>
+
+
+    <div class="form-group">
+        <input type="text" name="clave" class="form-control" placeholder="clave">
+    </div>
+
+    <div class="form-group">
+        <label class="font-drop upper font-color-drop-little">Rol</label><br>
+        <select name="Rol" class="browser-default custom-select">
+                                <option selected>Elige</option>
+                                <option class="font-drop upper font-color-drop-little" value="2">Administrador</option>
+                                <option class="font-drop upper font-color-drop-little" value="1">Empleado</option>
+                            </select>
+    </div>
+
+    <input type="submit" name="accion" value="Editar" class="btn btn-info">
+</form>
