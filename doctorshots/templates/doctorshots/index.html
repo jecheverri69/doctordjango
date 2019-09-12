@@ -1,9 +1,23 @@
 {% extends 'doctorshots/base.html' %}
+{% load staticfiles%}
+
  {% block titulo %} Welcome to Doctor Shot {% endblock %} 
  {% block body %}<body> {% endblock %}
   {% block header %} <header class="header"> {% endblock %}
 
-  {% block contenedor %}
-      <h1>  Index </h1>
-      
+  {% block contenedor %}         
    {% endblock %}
+   
+  {% block parallax %}  
+  <div   class="parallax-window"  data-parallax="scroll" data-image-src="{% static 'doctorshots/img/header.jpg'%}" >
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+       
+    </div>
+    <div class="carousel-item">
+            <img src="..." alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5>...</h5>
+              <p>...</p>
+            </div>
+          </div>
+  {% endblock %}

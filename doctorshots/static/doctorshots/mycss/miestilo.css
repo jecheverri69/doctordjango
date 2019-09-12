@@ -57,3 +57,12 @@ div .card {
 .body-empleado {
     background-image: url('../img/back.gif');
 }
+.table-right-to{
+
+    border-left: 50vh;
+}
+@media screen and (min-width:300px) and (max-width:800px) {
+    body{font-size:0.8em;}
+    sidebar{display:none;}
+    }
+    
