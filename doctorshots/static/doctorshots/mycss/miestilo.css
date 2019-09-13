@@ -54,15 +54,37 @@ div .card {
     border-radius: .25rem;
 }
 
+
+/* Empleado*/
+
+
+/*  Empleado  */
+
 .body-empleado {
     background-image: url('../img/back.gif');
 }
-.table-right-to{
 
-    border-left: 50vh;
+.header-empleado {
+    background-size: cover;
 }
-@media screen and (min-width:300px) and (max-width:800px) {
-    body{font-size:0.8em;}
-    sidebar{display:none;}
-    }
-    
+
+.header-empleado .navbar {
+    background-color: #000000bf !important;
+}
+
+.header-empleado .navbar ul .nav-link:hover {
+    background-color: #9910CB;
+    border-radius: 10px;
+}
+
+div .opacity {
+    background: rgba(0, 0, 0, .5);
+}
+
+.campos {
+    color: white;
+}
+
+.tamam {
+    width: 100%
+}

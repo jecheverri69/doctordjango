@@ -6,6 +6,9 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet"  href="{% static 'doctorshots/mycss/contenido.css' %}">
+      <link rel="stylesheet"  href="{% static 'doctorshots/mycss/modoResponsive.css' %}">      
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'doctorshots/mycss/miestilo.css' %}">
 
     <title> {% block titulo %} {% endblock %}</title>
@@ -30,7 +33,7 @@
                 <a class="nav-link " href="#">Mapa</a>
             </li>
             <li class=" nav-item buttonlogin">
-                <a class="nav-link mr-sm-2"  onclick="complementnotview()" href="{% url 'doctorshots:formlogin' %}"> Login</a>
+                <a class="nav-link mr-sm-2"   href="{% url 'doctorshots:formlogin' 'false' %}"> Login</a>
             </li>
             </li>
             <li class="nav-item">
@@ -52,7 +55,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="{% url 'doctorshots:formempleado' %}"> Empleados <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{% url 'doctorshots:formempleado' 'False' %}"> Empleados <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link"  onclick="complementview()" href="{% url 'doctorshots:carta' %}"> Carta <span class="sr-only">(current)</span></a>
@@ -108,6 +111,7 @@
 {%endif%}
 {% block contenedor %}
 {% endblock %}
+
 {% block parallax %}
 {% endblock %}
 
