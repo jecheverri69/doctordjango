@@ -13,7 +13,8 @@ urlpatterns = [
     path('eliminarempleado/<int:id>/', views.eliminarEmpleado, name='eliminarempleado'),
     path('editarempleado/<int:id>/', views.editarEmpleado, name='editarempleado' ),
     path('actualizarempleado',views.actualizarEmpleado, name='actualizarempleado'),
-    path('carta', views.carta, name='carta' )
+    path('carta', views.carta, name='carta' ),
+    path('inventario/<str:mensaje>/', views.formularioInventario, name = 'inventario')
 
     
 ]

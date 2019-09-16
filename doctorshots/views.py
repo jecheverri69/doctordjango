@@ -3,9 +3,9 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import reverse
 from django.forms.models import model_to_dict
 
-from doctorshots.models import Usuarios
+from doctorshots.models import Usuarios, Productos
 
-
+#Login 
 def index(request):
     return render(request, 'doctorshots/index.html')
 
@@ -33,7 +33,7 @@ def formularioEmpleado(request ,mensaje):
     q= Usuarios.objects.all()
     contexto = {'datos': q, 'mensaje': mensaje }
     return render(request,'doctorshots/form-crear-empleado.html',contexto)
-
+#Empleados
 def guardarEmpleado(request):
     try:
         empleado = Usuarios(
@@ -83,5 +83,13 @@ def actualizarEmpleado(request):
     except Exception as e:
         return HttpResponse(e)
 
+#Carta
 def carta(request):
-    return render(request, 'doctorshots/carta.html')        
+    return render(request, 'doctorshots/carta.html')
+
+#Inventario
+
+def formularioInventario(request,mensaje):
+    contexto = {'mensaje':mensaje}
+    return render(request,'doctorshots/form-productos.html')
+    

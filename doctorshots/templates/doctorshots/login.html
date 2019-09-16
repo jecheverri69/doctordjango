@@ -9,8 +9,14 @@
    {% block contenedor %}       
         
         <div class="container mt-4 col-lg-3 " >
+        
             <div class="card col-sm-10 inner "  >
-                
+                {% if 'not' and 'exist' in mensaje %}
+            <div class="alert alert-danger" role="alert">
+                Usuario o contraseña invalida
+            </div>
+
+        {% endif %}
                 <div class="card-body">
                     <form action="{% url 'doctorshots:login' %}" method="POST">
                         <div class="form-group text-center" >
@@ -34,5 +40,7 @@
             
         </div>
         
+        
+
      
         {% endblock %}
