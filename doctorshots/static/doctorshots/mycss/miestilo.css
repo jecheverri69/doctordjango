@@ -81,6 +81,26 @@ div .opacity {
     background: rgba(0, 0, 0, .5);
 }
 
+
+/*  Inventario */
+
+.body-inventario {
+    background-image: url('../img/back.gif');
+}
+
+.header-inventario {
+    background-size: cover;
+}
+
+.header-inventario .navbar {
+    background-color: #000000bf !important;
+}
+
+.header-inventario .navbar ul .nav-link:hover {
+    background-color: #9910CB;
+    border-radius: 10px;
+}
+
 .campos {
     color: white;
 }
