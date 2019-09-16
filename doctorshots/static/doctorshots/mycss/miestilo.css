@@ -2,7 +2,13 @@
 
 .header {
     background-size: cover;
-    height: 400px;
+    height:auto;
+}
+
+.header-sales {
+    background-size: cover;
+    height:auto;
+    padding-top: 70px;
 }
 
 .header .navbar {
@@ -87,4 +93,8 @@ div .opacity {
 
 .tamam {
     width: 100%
+}
+.parallax-window{
+
+    height: 888px;
 }

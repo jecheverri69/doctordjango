@@ -10,7 +10,12 @@
       <link rel="stylesheet"  href="{% static 'doctorshots/mycss/modoResponsive.css' %}">      
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'doctorshots/mycss/miestilo.css' %}">
-
+	<link rel="stylesheet" href="{% static 'doctorshots/mycss/normalize.css' %}">
+	<link rel="stylesheet" href="{% static 'doctorshots/mycss/bootstrap3.min.css' %}">
+	<link rel="stylesheet" href="{% static 'doctorshots/mycss/font-awesome.min.css' %}">
+	<link rel="stylesheet" href="{% static 'doctorshots/mycss/style.css' %}">
+	<link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/shortcut-icon.ico" />
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <title> {% block titulo %} {% endblock %}</title>
 </head>
 {% block body %} {% endblock %} {% block header %} {% endblock %} {% if request.session.logueado.3 != '1' and request.session.logueado.3 != '2' %}
@@ -58,13 +63,13 @@
                 <a class="nav-link" href="{% url 'doctorshots:formempleado' 'False' %}"> Empleados <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link"  onclick="complementview()" href="{% url 'doctorshots:carta' %}"> Carta <span class="sr-only">(current)</span></a>
+                <a class="nav-link"  href="{% url 'doctorshots:carta' %}"> Carta <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Inventario</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link " href="#">Ventas</a>
+            <li class="nav-item" >
+                <a class="nav-link "  href="{% url 'doctorshots:ventas' %}">Ventas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="{% url 'doctorshots:logout' %}">logout</a>
@@ -90,7 +95,7 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a id="carta" onclick="complementview()" class="nav-link" href="{% url 'doctorshots:carta' %}"> Carta <span class="sr-only">(current)</span></a>
+                <a id="carta"  class="nav-link" href="{% url 'doctorshots:carta' %}"> Carta <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Eventos</a>
@@ -109,6 +114,8 @@
     </div>
 </nav>
 {%endif%}
+</header>
+
 {% block contenedor %}
 {% endblock %}
 
@@ -119,7 +126,6 @@
     {% block complement %}
     {% endblock %}
 </div>
-</header>
 
 
         <!--Scripts-->
@@ -129,6 +135,20 @@
         <script src="{% static 'doctorshots/js/mijs.js' %}"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="{% static 'doctorshots/js/parallax.min.js'%}"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="static/doctorshots/js/jquery-1.11.2.min.js"><\/script>')</script>
+        <script src="{% static 'doctorshots/js/modernizrmy.js' %}"></script>
+        <script src="{% static 'doctorshots/js/mainmy.js' %}"></script>
+        <script src="{% static 'doctorshots/js/bootstrapmy.min.js' %}"></script>
+        <script>
+            $(function () {
+              $('#TabProducts a:first').tab('show')
+            });
+            $('#TabProducts a').click(function (e) {
+                e.preventDefault()
+                $(this).tab('show')
+              });
+          </script>
         </body>
 
 
