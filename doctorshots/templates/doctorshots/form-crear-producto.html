@@ -1,0 +1,136 @@
+{% extends 'doctorshots/base.html' %} {% load staticfiles%} {% block titulo %} Formulario-productos{% endblock %} {% block body %}
+
+<body class="body-empleado"> {% endblock %} {% block header %}
+    <header class="header-empleado"> {% endblock %} {% block contenedor %}
+        <div class="container-fluid">
+
+            <div class="d-flex margin-top-my mt-4">
+                <div class="card col-sm-6-my ">
+                    <div class="card-body ">
+                        <form action="{% url 'doctorshots:guardarproducto' %}" method="POST">
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                <label class="campos">Codigo de producto</label>
+                                <input type="text" name="codigoProducto" class="form-control">
+                            </div>
+
+                            <div class="form-group">
+                                <label class="campos">Nombre</label>
+                                <input type="text" name="nombreProducto" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="campos">precio de venta</label>
+                                <input type="number" name="precioVenta" class="form-control" required>
+                            </div>
+
+
+
+
+                            <div class="form-group">
+                                <label class="campos">Costo</label>
+                                <input type="text" name="precioCompra" class="form-control" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="campos">habilitado</label><br>
+                                <select name="habilitado" class="browser-default custom-select">
+                                <option selected>Elige</option>
+                                <option class="font-drop upper font-color-drop-little" value="1">habilitado</option>
+                                <option class="font-drop upper font-color-drop-little" value="2">deshabilitado</option>
+                            </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="campos">Cantidad</label>
+                                <input type="number" name="cantidad" class="form-control" required>
+                            </div>
+                            <input type="submit" name="accion" value="Agregar" class="btn btn-info">
+                        </form>
+                    </div>
+                         {% if '1062' in mensaje %}
+                    <div class="alert alert-danger" role="alert">
+                        Ya existe un empleado con esta cedula
+                    </div>
+                 {% elif '1265' in mensaje %}
+                   <div class="alert alert-danger" role="alert">
+                        Ingrese una cedula valida
+                         
+                    </div>   
+                {% elif '1264' in mensaje %}
+                     <div class="alert alert-danger" role="alert">
+                        Ingrese una cedula valida
+                    </div>
+                {% elif '1366' in mensaje %}
+                     <div class="alert alert-danger" role="alert">
+                        Ingrese solo numeros en la cedula 
+                    </div>   
+                {% elif '1406' in mensaje %}
+                     <div class="alert alert-danger" role="alert">
+                        seleccione un rol
+                    </div> 
+                {% elif 'GuardadoCorrectamente' in mensaje %}
+                    <div class="alert alert-success" role="alert">
+                        Empleado Guardado con exito
+                    </div>
+                {% endif %}
+                </div>
+
+                <div class="col-sm-7 tamam">
+                    <table class="table table-dark opacity">
+                        <thead>
+                            <tr>
+                                <th class="font-drop upper font-color-drop">Id</th>
+                                <th class="font-drop upper font-color-drop">Codigo</th>
+                                <th class="font-drop upper font-color-drop">Nombre</th>
+                                <th class="font-drop upper font-color-drop">Precio</th>
+                                <th class="font-drop upper font-color-drop">Costo</th>
+                                <th class="font-drop upper font-color-drop">Habilitado</th>
+                                <th class="font-drop upper font-color-drop">Cantidad</th>
+
+
+                            </tr>
+                        </thead>
+                        {% for producto in datos %}
+                        <tr>
+                            <td class="font-Neon">{{producto.id}} </td>
+                            <td class="font-pacman">{{producto.codigoProducto}}</td>
+                            <td class="font-pacman">{{producto.nombreProducto}}</td>
+                            <td class="font-pacman">{{producto.precioVenta}}</td>
+                            <td class="font-pacman">{{producto.precioCompra}}</td>
+                            <td class="font-pacman">{{producto.habilitado}}</td>
+                            <td class="font-pacman">{{producto.cantidad}}</td>
+
+
+
+                            
+                        </tr>
+                        {% endfor %}
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!--Modal editar Empleado-->
+                <div class="modal fade" id="modalEmpleado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-xl" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Editar Empledo</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                            </div>
+                            <div class="modal-body" id="modaleditar">
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                {% endblock %}

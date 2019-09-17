@@ -5,13 +5,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet"  href="{% static 'doctorshots/mycss/contenido.css' %}">
       <link rel="stylesheet"  href="{% static 'doctorshots/mycss/modoResponsive.css' %}">      
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'doctorshots/mycss/miestilo.css' %}">
 	<link rel="stylesheet" href="{% static 'doctorshots/mycss/normalize.css' %}">
-	<link rel="stylesheet" href="{% static 'doctorshots/mycss/bootstrap3.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
 	<link rel="stylesheet" href="{% static 'doctorshots/mycss/font-awesome.min.css' %}">
 	<link rel="stylesheet" href="{% static 'doctorshots/mycss/style.css' %}">
 	<link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/shortcut-icon.ico" />
@@ -66,10 +65,10 @@
                 <a class="nav-link"  href="{% url 'doctorshots:carta' %}"> Carta <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Inventario</a>
+                <a class="nav-link" href="{% url 'doctorshots:inventario' 'False' %}">Inventario</a>
             </li>
             <li class="nav-item" >
-                <a class="nav-link "  href="{% url 'doctorshots:ventas' %}">Ventas</a>
+                <a class="nav-link "  href="#">Ventas</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="{% url 'doctorshots:logout' %}">logout</a>

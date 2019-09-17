@@ -16,6 +16,18 @@ class Usuarios(models.Model):
     #METODOS
     def __str__(self):
         return self.usuario
+
+class Productos(models.Model):
+    codigoProducto = models.CharField(max_length=15,  unique=True)
+    nombreProducto = models.CharField(max_length=45 )
+    precioVenta = models.FloatField()
+    precioCompra = models.FloatField()
+    habilitado = models.BooleanField(default=True)
+    cantidad = models.IntegerField()
+
+    #Metodos 
+    def __str__(self):
+        return self.nombreProducto
         
     
     

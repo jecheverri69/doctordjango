@@ -3,7 +3,7 @@ from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import reverse
 from django.forms.models import model_to_dict
 
-from doctorshots.models import Usuarios
+from doctorshots.models import Usuarios,Productos
 
 
 def index(request):
@@ -86,34 +86,34 @@ def actualizarEmpleado(request):
 def carta(request):
     return render(request, 'doctorshots/carta.html')  
 
-def ventas(request):
-    return render(request, 'doctorshots/ventas.html')      
+
 
     # inventario
 
     
-def formularioinventario(request ,mensaje):
-    q= Usuarios.objects.all()
+def inventario(request ,mensaje):
+    q = Productos.objects.all()
     contexto = {'datos': q, 'mensaje': mensaje }
     return render(request,'doctorshots/form-crear-producto.html',contexto)
 
-def guardarEmpleado(request):
+def guardarproducto(request):
     try:
-        empleado = Usuarios(
-            cedula = request.POST['cedula'],
-            nombres= request.POST['nombres'],
-            usuario = request.POST['usuario'],
-            clave = request.POST['clave'],
-            Rol = request.POST['Rol']
+        producto = Productos(
+            codigoProducto = request.POST['codigoProducto'],
+            nombreProducto= request.POST['nombreProducto'],
+            precioVenta = request.POST['precioVenta'],
+            precioCompra = request.POST['precioCompra'],
+            habilitado = request.POST['habilitado'],
+            cantidad = request.POST['cantidad']
         )
-        empleado.save()
+        producto.save()
         
-        q = Usuarios.objects.all()
+        q = Productos.objects.all()
         contexto = {'datos': q}
         
-        return HttpResponseRedirect(reverse ('doctorshots:formempleado' ,args=('GuardadoCorrectamente',))) 
+        return HttpResponseRedirect(reverse ('doctorshots:inventario' ,args=('GuardadoCorrectamente',))) 
     except Exception as e:
-        return HttpResponseRedirect(reverse('doctorshots:formempleado',args=(e,)))
+        return HttpResponse(e)
 
 def eliminarEmpleado(request,id):
     try:
