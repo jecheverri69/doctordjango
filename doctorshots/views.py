@@ -7,7 +7,8 @@ from doctorshots.models import Usuarios,Productos
 
 
 def index(request):
-    return render(request, 'doctorshots/index.html')
+    
+        return render(request, 'doctorshots/index.html')
 
 def login(request):
     try:
@@ -16,7 +17,7 @@ def login(request):
         #verificar si hay un registro con ese usuario y clave
         q = Usuarios.objects.get(usuario = user, clave = passw)       
         #en caso afirmativo, creo la variable de sesión
-        request.session['logueado'] = [q.cedula, q.usuario, q.clave, q.Rol]
+        request.session['logueado'] = [q.cedula, q.usuario, q.clave, q.Rol, q.nombres]
         return render(request,'doctorshots/index.html')
     except Exception as e:
         return HttpResponseRedirect(reverse ('doctorshots:formlogin',args=(e,)))
@@ -115,14 +116,14 @@ def guardarproducto(request):
     except Exception as e:
         return HttpResponse(e)
 
-def eliminarEmpleado(request,id):
+def eliminarproducto(request,id):
     try:
-        q = Usuarios.objects.get(pk=id)
+        q = Productos.objects.get(pk=id)
         print(q)
         q.delete()
-        return HttpResponseRedirect(reverse('doctorshots:formempleado', args=('Eliminado Correctamente',)))
+        return HttpResponseRedirect(reverse('doctorshots:inventario', args=('Eliminado Correctamente',)))
     except Exception as e:
-        return HttpResponseRedirect(reverse('doctorshots:formempleado', args=(e,)))
+        return HttpResponseRedirect(reverse('doctorshots:inventario', args=(e,)))
     
 def editarEmpleado(request, id):
     try:

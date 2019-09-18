@@ -1,6 +1,6 @@
 {% extends 'doctorshots/base.html' %} {% load staticfiles%} {% block titulo %} Formulario-productos{% endblock %} {% block body %}
 
-<body class="body-empleado"> {% endblock %} {% block header %}
+<body class="body-inventario"> {% endblock %} {% block header %}
     <header class="header-empleado"> {% endblock %} {% block contenedor %}
         <div class="container-fluid">
 
@@ -14,7 +14,6 @@
                                 <label class="campos">Codigo de producto</label>
                                 <input type="text" name="codigoProducto" class="form-control">
                             </div>
-
                             <div class="form-group">
                                 <label class="campos">Nombre</label>
                                 <input type="text" name="nombreProducto" class="form-control" required>
@@ -54,24 +53,25 @@
                     </div>
                  {% elif '1265' in mensaje %}
                    <div class="alert alert-danger" role="alert">
-                        Ingrese una cedula valida
+                    Ingrese un precio valido
+                        
                          
                     </div>   
                 {% elif '1264' in mensaje %}
                      <div class="alert alert-danger" role="alert">
-                        Ingrese una cedula valida
+                        Ingrese un precio valido
                     </div>
                 {% elif '1366' in mensaje %}
                      <div class="alert alert-danger" role="alert">
-                        Ingrese solo numeros en la cedula 
+                        Ingrese solo numeros en los precios
                     </div>   
                 {% elif '1406' in mensaje %}
                      <div class="alert alert-danger" role="alert">
-                        seleccione un rol
+                        seleccione una habilitacion
                     </div> 
                 {% elif 'GuardadoCorrectamente' in mensaje %}
                     <div class="alert alert-success" role="alert">
-                        Empleado Guardado con exito
+                        Producto Guardado con exito
                     </div>
                 {% endif %}
                 </div>
@@ -87,6 +87,8 @@
                                 <th class="font-drop upper font-color-drop">Costo</th>
                                 <th class="font-drop upper font-color-drop">Habilitado</th>
                                 <th class="font-drop upper font-color-drop">Cantidad</th>
+                                <th class="font-drop upper font-color-drop">Acciones</th>
+
 
 
                             </tr>
@@ -100,6 +102,14 @@
                             <td class="font-pacman">{{producto.precioCompra}}</td>
                             <td class="font-pacman">{{producto.habilitado}}</td>
                             <td class="font-pacman">{{producto.cantidad}}</td>
+                            <td>
+                                <a class="btn btn-warning font-drop"  >Editar</a>
+                            </td>
+
+                            <td>
+
+                                <a class="btn btn-danger font-drop" href="{% url 'doctorshots:eliminarproducto' producto.id %}">Delete</a>
+                            </td>
 
 
 

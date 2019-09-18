@@ -16,6 +16,8 @@ urlpatterns = [
     path('carta', views.carta, name='carta' ),
     path('inventario/<str:mensaje>/', views.inventario, name='inventario'),
     path('guardarproducto', views.guardarproducto, name="guardarproducto"),
+    path('eliminarproducto/<int:id>/', views.eliminarproducto, name='eliminarproducto'),
+
 
 
 

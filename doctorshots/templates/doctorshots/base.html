@@ -9,11 +9,11 @@
       <link rel="stylesheet"  href="{% static 'doctorshots/mycss/modoResponsive.css' %}">      
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'doctorshots/mycss/miestilo.css' %}">
-	<link rel="stylesheet" href="{% static 'doctorshots/mycss/normalize.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
 	<link rel="stylesheet" href="{% static 'doctorshots/mycss/font-awesome.min.css' %}">
-	<link rel="stylesheet" href="{% static 'doctorshots/mycss/style.css' %}">
-	<link rel="Shortcut Icon" type="image/x-icon" href="assets/icons/shortcut-icon.ico" />
+	<link rel="stylesheet" href="{% static 'doctorshots/mycss/animate.css' %}">
+    
+
 	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
     <title> {% block titulo %} {% endblock %}</title>
 </head>
@@ -24,17 +24,17 @@
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
-                    </button>
+    </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active" id="example">
                 <a class="nav-link carta"   href="{% url 'doctorshots:carta' %}">Carta <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Eventos</a>
+                <a class="nav-link" href="">Eventos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="#">Mapa</a>
+                <a class="nav-link " href="">Mapa</a>
             </li>
             <li class=" nav-item buttonlogin">
                 <a class="nav-link mr-sm-2"   href="{% url 'doctorshots:formlogin' 'false' %}"> Login</a>
@@ -71,7 +71,7 @@
                 <a class="nav-link "  href="#">Ventas</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="{% url 'doctorshots:logout' %}">logout</a>
+                <a class="nav-link " href="{% url 'doctorshots:logout' %}">Cerrar Sesion</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="">ADMIN</a>
@@ -103,7 +103,7 @@
                 <a class="nav-link " href="#">Mapa</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="{% url 'doctorshots:logout' %}">logout</a>
+                <a class="nav-link " href="{% url 'doctorshots:logout' %}">Cerrar Sesion</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " href="">EMPLEADO</a>

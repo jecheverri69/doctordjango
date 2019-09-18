@@ -1,4 +1,6 @@
 {% extends 'doctorshots/base.html' %}
+{% load static%}
+
 {% load staticfiles%}
 
  {% block titulo %} Welcome to Doctor Shot {% endblock %} 
@@ -10,14 +12,9 @@
    
   {% block parallax %}  
   <div   class="parallax-window"  data-parallax="scroll" data-image-src="{% static 'doctorshots/img/header.jpg'%}" >
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-       
-    </div>
-    <div class="carousel-item"    height='888px'>
-            <img src="..." alt="...">
-            <div class="carousel-caption d-none d-md-block">
-              <h5>...</h5>
-              <p>...</p>
-            </div>
-          </div>
+    {% if request.session.logueado.3 != '1' and request.session.logueado.3 != '2' %}
+   <div class="rotateIn animated letra">¡¡Bienvenido!!</div>
+    {% elif request.session.logueado.3 == '2' or request.session.logueado.3 == '1' %}
+   <div class="rotateIn animated letra">¡¡Bienvenido {{ request.session.logueado.4 }}!!</div> 
+    {% endif %}
   {% endblock %}

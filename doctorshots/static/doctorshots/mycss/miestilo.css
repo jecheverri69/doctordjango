@@ -65,7 +65,12 @@ div .card {
 
 
 /*  Empleado  */
+.body-inventario {
+    background-attachment: fixed;
+    background-image: url('../img/ezgif-1-e0fc53904c39.gif');
+    background-size: cover;
 
+}
 .body-empleado {
     background-image: url('../img/back.gif');
 }
@@ -98,3 +103,6 @@ div .opacity {
 
     height: 888px;
 }
+
+/* inventario */
+

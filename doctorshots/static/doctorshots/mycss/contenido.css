@@ -29,7 +29,7 @@
 .letra {
     font-size: 64px;
     top: 200px;
-    bottom: 150px;
+    bottom: 250px;
     background: rgba(0, 0, 0, 0.7);
     position: absolute;
     right: 15%;
@@ -380,56 +380,4 @@
     background-position: 0 -25px;
     border-radius:50%;
 
-/* </editor-fold> */
-
-
-/*contenido de Descubra mas*/
-/* <editor-fold defaultstate="collapsed" desc="Código Acumulado"> */
-
-/* </editor-fold> */
-
-/*footer--Diseño Secundario*/
-/* <editor-fold defaultstate="collapsed" desc="Código Acumulado"> */
-.footerper {
-    background: #2b3553;
-    text-align: center;
-    padding: 24px 30px;
-    padding-left: 30px !important;
 }
-
-.footerper .navper {
-    float: left;
-    margin-bottom: 0;
-    padding: 0;
-    list-style: none;
-    display: inline-block;
-}
-.navper {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    padding-left: 0;
-    margin-bottom: 0;
-    list-style: none;
-}
-.footerper .copyright {
-    font-size: .75rem;
-    line-height: 1.8;
-    color: black;
-
-}
-/* </editor-fold> */
-
-/* <editor-fold defaultstate="collapsed" desc="Código Acumulado"> */
-.btnError {
-    background: #7E1F41;
-    color: #fff;
-}
-.btnError:hover {
-    background: #7E1F41;
-    color: #fff;
-}
-/* </editor-fold> */
-
