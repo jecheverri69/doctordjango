@@ -26,10 +26,28 @@
     width: 100%;
     height: 80vh;
 }
+@font-face {
+    font-family: sulley;
+    src: url(../fonts/Maggie\ Moo.otf);
+  }
+
+.sulley{
+
+    font-family: sulley;
+}
+@font-face {
+    font-family: angie;
+    src: url(../fonts/Lethal Slime.ttf);
+  }
+
+.angie{
+
+    font-family: angie;
+}
 .letra {
     font-size: 64px;
-    top: 200px;
-    bottom: 250px;
+    top: 92px;
+    bottom: 413px;
     background: rgba(0, 0, 0, 0.7);
     position: absolute;
     right: 15%;

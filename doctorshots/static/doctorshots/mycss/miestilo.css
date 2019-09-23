@@ -1,4 +1,9 @@
 /* Styles para el navbar*/
+    ::-webkit-scrollbar { 
+        display: none; 
+    }
+    
+
 
 .header {
     background-size: cover;
@@ -101,8 +106,9 @@ div .opacity {
 }
 .parallax-window{
 
-    height: 888px;
+    height: 730px;
 }
+
 
 /* inventario */
 

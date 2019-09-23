@@ -3,6 +3,9 @@
 <html>
 
 <head>
+    <meta http-equiv="Expires" CONTENT="0">
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">
+    <meta http-equiv="Pragma" CONTENT="no-cache">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet"  href="{% static 'doctorshots/mycss/contenido.css' %}">
@@ -18,7 +21,7 @@
     <title> {% block titulo %} {% endblock %}</title>
 </head>
 {% block body %} {% endblock %} {% block header %} {% endblock %} {% if request.session.logueado.3 != '1' and request.session.logueado.3 != '2' %}
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark " style="margin-bottom: 500px">
     <a class="navbar-brand" href="{% url 'doctorshots:inicio' %}">
         <img src="{% static 'doctorshots/img/logo.png' %}" alt="logo">
     </a>
@@ -49,8 +52,8 @@
 </nav>
 
 {% elif request.session.logueado.3 == '2' %}
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
-    <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark " style="margin-bottom: 500px">
+    <a class="navbar-brand" href="{% url 'doctorshots:inicio' %}">
         <img src="{% static 'doctorshots/img/logo.png' %}" alt="logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -84,8 +87,8 @@
 </nav>
 
 {% elif request.session.logueado.3 == '1' %}
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark ">
-    <a class="navbar-brand" href="#">
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark " style="margin-bottom: 500px">
+    <a class="navbar-brand" href="{% url 'doctorshots:inicio' %}">
         <img src="{% static 'doctorshots/img/logo.png' %}" alt="logo">
     </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">

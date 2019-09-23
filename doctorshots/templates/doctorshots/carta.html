@@ -1,21 +1,16 @@
 {% extends 'doctorshots/base.html' %}
  {% block titulo %} Welcome to Doctor Shot {% endblock %} 
- {% block body %}<body> {% endblock %}
+ {% block body %} <body class="sulley"> {% endblock %}
   {% block header %}
 <header class="header"> {% endblock %}
+
       
       
   {% block complement %}
   {% load static %}
      <div class="ce">
          <!-- row one -->
-         <div class="carousel-item">
-                <img src="..." alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>...</h5>
-                  <p>...</p>
-                </div>
-              </div>
+
          <div class="row"> 
              <div class="col-lg-4 col-md-3 col-sm-2">
                  <div class="user-card">
@@ -502,8 +497,16 @@
      {% endblock %}
      {% block parallax %}  
      <div   class="parallax-window"  data-parallax="scroll" data-image-src="{% static 'doctorshots/img/header.jpg'%}" >
-      <div class="rotateIn animated letra">¡¡Nuestras Bebidas!!</div></div>
-          
+                    
+                        <div class="rotateIn animated letra">¡¡Nuestras Bebidas!!</div>                        
+                  
+                    
+                        <div id="img-gif">
+                            <br><br><br><br><br><br><br><br>
+                            <img id="img-gif-undisplay"  style="padding-left: 480px" src="{% static 'doctorshots/img/giphy.gif' %}">                       
+                        </div>
+                    <button class="toggle">s</button>
+            </div>        
        
      {% endblock %}
 
